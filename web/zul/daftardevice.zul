@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtama"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">       
+<window id="winUtama" title="IP addres" closable="true" apply="ctrl.index_" width="750px"
+class="css">
+
+	<label id="lbnama" width="250px"/>
+        <label id="lbbarang"/>
+  
+       <grid>
+           <columns>
+               <column width="100px" align="right"/>
+           </columns>
+           <rows>
+               <row>
+                   <label value="Nama :" style="color:red;background-color:green" />
+                   <textbox id="txtNama" width="200px"/> 
+                    
+                   </row>
+            </rows>
+       </grid>
+       <vbox>
+       <label id="lblJml"/>
+       <hbox>
+       <button label="Add" id="btnAdd" mold="os" image="/img/tambah.png"/>
+       <button label="Edit" id="btnEdit" mold="os" image="/img/edit.png"/>
+       <button label="Hapus" id="btnHapus" mold="os" image="/img/hapus.png"/>
+       <button label="Refresh" id="btnRefresh" mold="os" image="/img/refresh.png"/>
+       <button label="Tutup" id="btnTutup" mold="os" image="/img/tutup.png"/>
+       </hbox>
+       </vbox>
+       <listbox >
+           
+           <listhead>
+               <listheader label="id_device" width="250px"/>
+               <listheader label="nama_device" width="150px"/>
+               <listheader label="mac_addres" width="150px"/>
+               <listheader label="tanggal" width="150px"/>
+               <listheader label="jam" width="150px"/>
+               <listheader label="ip_addres" width="150px"/>
+               <listheader label="keterangan" width="150px"/>
+               <listheader label="nama_unit" width="150px"/>
+               <listheader label="nama_hub" width="150px"/>
+           </listhead>
+        
+       </listbox>
+           
+</window>
+</zk>
