@@ -33,15 +33,15 @@ class="css">
        <listbox >
            
            <listhead>
-               <listheader label="id_device" width="250px"/>
-               <listheader label="nama_device" width="150px"/>
-               <listheader label="mac_addres" width="150px"/>
-               <listheader label="tanggal" width="150px"/>
-               <listheader label="jam" width="150px"/>
-               <listheader label="ip_addres" width="150px"/>
-               <listheader label="keterangan" width="150px"/>
-               <listheader label="nama_unit" width="150px"/>
-               <listheader label="nama_hub" width="150px"/>
+               <listheader label="id_device" width="100px"/>
+               <listheader label="nama_device" width="100px"/>
+               <listheader label="mac_addres" width="100px"/>
+               <listheader label="tanggal" width="100px"/>
+               <listheader label="jam" width="100px"/>
+               <listheader label="ip_addres" width="100px"/>
+               <listheader label="keterangan" width="100px"/>
+               <listheader label="nama_unit" width="100px"/>
+               <listheader label="nama_hub" width="100px"/>
            </listhead>
         
        </listbox>
