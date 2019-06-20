@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtamaMenu" ?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtama" ?>
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <style src="/css/mycss.css"/>
     
-    <window id="winUtamaMenu" title="LOGIN" closable="true" apply="ctrl.index_" border="true"
+    <window id="winUtama" title="LOGIN" closable="true" apply="ctrl.index_" border="true"
     width="100%" height="100%" mode="modal">
         <menubar>
             <menu label="file">
