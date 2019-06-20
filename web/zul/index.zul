@@ -3,18 +3,24 @@
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <style src="/css/mycss.css"/>
     
-    <window id="winUtama" title="LOGIN" closable="true" apply="ctrl.index_" border="true"
+    <window id="winUtama" title="DAFTAR ALAMAT IP dan JARINGAN" closable="true" apply="ctrl.index_" border="true"
     width="100%" height="100%" mode="modal">
         <menubar>
             <menu label="file">
                 <menupopup>
                     <menuitem label="Ganti password"/>
-                        <menuitem label="logout"/>
+                     <menuitem label="logout"/>
                 </menupopup>
             </menu>
-            <menu label="menu">
+            <menu label="IP ADDRESS">
+                <menupopup>
+                    <menuitem label="Daftar Device"/>
+                </menupopup>
+            </menu>
+            <menu label="Data dan Fakta">
                 <menupopup>
                     <menuitem label="IP Adress"/>
+                    <menuitem label="HUB"/>
                 </menupopup>
                 
             </menu>
