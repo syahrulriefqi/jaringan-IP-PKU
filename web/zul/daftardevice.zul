@@ -2,26 +2,23 @@
 
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtama"?>
 <zk xmlns="http://www.zkoss.org/2005/zul">       
-<window id="winUtama" title="IP addres" closable="true" apply="ctrl.index_" width="750px"
+<window id="winUtama" title="IP addres" closable="true" apply="ctrl.daftardevice_" width="100%"
 class="css">
 
-	<label id="lbnama" width="250px"/>
-        <label id="lbbarang"/>
-  
+	<label id="lbdevice" width="250px"/>
        <grid>
            <columns>
                <column width="100px" align="right"/>
            </columns>
            <rows>
                <row>
-                   <label value="Nama :" style="color:red;background-color:green" />
+                   <label value="Nama : "/>
                    <textbox id="txtNama" width="200px"/> 
                     
                    </row>
             </rows>
        </grid>
        <vbox>
-       <label id="lblJml"/>
        <hbox>
        <button label="Add" id="btnAdd" mold="os" image="/img/tambah.png"/>
        <button label="Edit" id="btnEdit" mold="os" image="/img/edit.png"/>
@@ -30,7 +27,8 @@ class="css">
        <button label="Tutup" id="btnTutup" mold="os" image="/img/tutup.png"/>
        </hbox>
        </vbox>
-       <listbox >
+       
+      <listbox>
            
            <listhead>
                <listheader label="id_device" width="100px"/>
