@@ -8,8 +8,8 @@
         <menubar>
             <menu label="file">
                 <menupopup>
-                    <menuitem label="Ganti password"/>
-                     <menuitem label="logout"/>
+                    <menuitem label="Ganti Password"/>
+                     <menuitem label="Logout"  href="/"/>
                 </menupopup>
             </menu>
             <menu label="IP ADDRESS">
