@@ -44,7 +44,7 @@ public class login_ extends GenericForwardComposer{
             tbVLogin  = (VLogin) lstVLogin.get(0);
            Messagebox.show("Selamat datang "+tbVLogin.getNama());
             session.setAttribute("sessMenu", "1");
-            execution.createComponents("/zul/menu.zul", null, null);
+            execution.createComponents("/zul/index.zul", null, null);
             winUtamaLogin.detach();
         }
     }
