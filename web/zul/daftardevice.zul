@@ -2,7 +2,7 @@
 
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtama"?>
 <zk xmlns="http://www.zkoss.org/2005/zul">       
-<window id="winUtama" title="IP addres" closable="true" apply="ctrl.daftardevice_" width="900px"
+<window id="winUtama" title="IP addres" closable="true" apply="ctrl.daftardevice_" width="950px"
 class="css">
 
 	<label id="lbdevice" width="250px"/>
@@ -39,7 +39,7 @@ class="css">
                <listheader label="jam" width="50px"/>
                <listheader label="ip_addres" width="100px"/>
                <listheader label="keterangan" width="100px"/>
-               <listheader label="nama_unit" width="50px"/>
+               <listheader label="nama_unit" width="100px"/>
                <listheader label="nama_hub" width="50px"/>
            </listhead>
            <listitem forEach="@{winUtama$composer.lstVJarDevice}" self="@{each='VJarDevice'}"
