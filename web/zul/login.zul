@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtamaLogin" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <style src="/css/mycss.css"/>
+      <div width="100%" align="center"/>
+ <window id="winUtamaLogin" title="LOGIN" closable="true" apply="ctrl.login_" border="true"
+         sclass="css" style="margin-top:40px" width="500px" mode="modal" >
+   
+         <vbox align="center" width="100%">
+             <image src="/img/login.png" width="50px" height="50px"/>
+             <label value="RSU PKU MUHAMMADIYAH BANTUL" style="color:blue;font-size:25px"/>
+             <grid>
+                 <columns>
+                     <column align="right" width="100px"/>
+                 </columns>
+                 <rows>
+                     <row>
+                        <label value="N B M"/>
+                        <textbox id="txtUser" width="100px"/>
+                     </row>
+                     <row>
+                        <label value="Password"/>
+                        <textbox id="txtPassword" type="password" width="100px"/>
+                     </row>
+                     <row>
+                         <label value="Captcha"/>
+                         <hbox>          
+                         <captcha id="chpTa" height="30px" width="70px" length="2"/>
+                         <textbox id="txtCpa" width="70px" />
+                         <button id="btnRefresh" label="Refresh" mold="os" onClick='chpTa.randomValue();txtCpa.value=""'/>
+                         </hbox>
+             
+                     </row>
+                 </rows>
+             </grid>
+             <button mold="os" label="SUBMIT" id="btnLogin" width="150px"/>
+         </vbox>
+          
+ </window>
+
+</zk>
