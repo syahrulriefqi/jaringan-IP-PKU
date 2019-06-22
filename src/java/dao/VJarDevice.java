@@ -10,6 +10,7 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -35,11 +36,13 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "VJarDevice.findByIpAddress", query = "SELECT v FROM VJarDevice v WHERE v.ipAddress = :ipAddress"),
     @NamedQuery(name = "VJarDevice.findByNamaUnit", query = "SELECT v FROM VJarDevice v WHERE v.namaUnit = :namaUnit"),
     @NamedQuery(name = "VJarDevice.findByNamaHub", query = "SELECT v FROM VJarDevice v WHERE v.namaHub = :namaHub")})
+
 public class VJarDevice implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Basic(optional = false)
     @Column(name = "id_device")
+    @Id
     private int idDevice;
     @Column(name = "nama_device")
     private String namaDevice;
@@ -133,6 +136,10 @@ public class VJarDevice implements Serializable {
 
     public void setNamaHub(String namaHub) {
         this.namaHub = namaHub;
+    }
+
+    public Object getId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
