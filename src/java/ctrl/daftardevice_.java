@@ -57,9 +57,9 @@ public class daftardevice_ extends GenericForwardComposer{
 //  // lstVJarDevice=em.createNamedQuery("VJarDevice.findAll")
 //   // .setHint("eclipselink.refresh", "true")
 //   // .getResultList();
-   String sql="select * from v_jar_device limit 10";
-    lstVJarDevice = em.createNativeQuery(sql, VJarDevice.class)
-               .setHint("exlipselink.refresh", "true")
+   String sql="select * from jar_device limit 10";
+    lstJarDevice = em.createNativeQuery(sql, JarDevice.class)
+               .setHint("eclipselink.refresh", "true")
                .getResultList();
 //        Messagebox.show(lstVJarDevice.size()+"");
 }
@@ -72,11 +72,17 @@ public class daftardevice_ extends GenericForwardComposer{
     public void onSelect$lsbDaftar() throws InterruptedException{
     lstJarDevice=em.createNamedQuery("JarDevice.findById")
             .setHint("eclipselink.refresh", "true")
-            .setParameter("id", tbVJarDevice.getId())
+            .setParameter("id", tbJarDevice.getId())
             .getResultList();
     tbJarDevice=(JarDevice) lstJarDevice.get(0);
 }
 
+    public void onClick$btnAdd() throws InterruptedException{
+    session.setAttribute("sessNavi", "1");
+    execution.createComponents("/zul/crudDevice.zul",null,null);
+    
+    }
+    
     public VJarDevice getTbVJarDevice() {
         return tbVJarDevice;
     }

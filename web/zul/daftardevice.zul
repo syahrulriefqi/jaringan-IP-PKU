@@ -28,32 +28,33 @@ class="css">
        </hbox>
        </vbox>
        
-     <listbox id="lsbDaftar" model="@{winUtama$composer.lstVJarDevice,load-after='winUtama.onCreate,txtNama.onOK,btnRefresh.onClick,btnHapus.onClick'}" width="100%"
-       selectedItem="@{winUtama$composer.tbVJarDevice}">
+     <listbox id="lsbDaftar" model="@{winUtama$composer.lstJarDevice,load-after='winUtama.onCreate,txtNama.onOK,btnRefresh.onClick,btnHapus.onClick'}" width="100%"
+       selectedItem="@{winUtama$composer.tbJarDevice}">
            
            <listhead>
                <listheader label="id_device" width="50px"/>
                <listheader label="nama_device" width="100px"/>
                <listheader label="mac_addres" width="100px"/>
+               <listheader label="idUnit" width="100px"/>
+               <listheader label="user" width="100px"/>
+               <listheader label="password" width="100px"/>
                <listheader label="tanggal" width="100px"/>
                <listheader label="jam" width="50px"/>
-               <listheader label="ip_addres" width="100px"/>
                <listheader label="keterangan" width="100px"/>
-               <listheader label="nama_unit" width="100px"/>
-               <listheader label="nama_hub" width="50px"/>
+             
            </listhead>
-           <listitem forEach="@{winUtama$composer.lstVJarDevice}" self="@{each='VJarDevice'}"
-           label="@{VJarDevice}">
-               <listcell label="@{VJarDevice.idDevice}" />
-               <listcell label="@{VJarDevice.namaDevice}"/>
-               <listcell label="@{VJarDevice.macAddres}"/>
-               <listcell label="@{VJarDevice.tanggal,converter='converter_.tanggal_string'}"/>
-               <listcell label="@{VJarDevice.jam}"/>
-               <listcell label="@{VJarDevice.ipAddress}"/>
-               <listcell label="@{VJarDevice.keterangan}"/>
-               <listcell label="@{VJarDevice.namaUnit}"/>
-               <listcell label="@{VJarDevice.namaHub}"/>
-        
+           <listitem forEach="@{winUtama$composer.lstJarDevice}" self="@{each='JarDevice'}"
+           label="@{JarDevice}">
+               <listcell label="@{JarDevice.idDevice}" />
+               <listcell label="@{JarDevice.namaDevice}"/>
+               <listcell label="@{JarDevice.macAddres}"/>
+               <listcell label="@{JarDevice.idUnit}"/>
+               <listcell label="@{JarDevice.user}"/>
+               <listcell label="@{JarDevice.password}"/>
+               <listcell label="@{JarDevice.tanggal,converter='converter_.tanggal_string'}"/>
+               <listcell label="@{JarDevice.jam}"/>
+               <listcell label="@{JarDevice.keterangan}"/>
+          
            </listitem>
        </listbox>
            

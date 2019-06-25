@@ -12,9 +12,9 @@
                      <menuitem label="Logout" image="/img/tambah.png" id="btnLogout"/>
                 </menupopup>
             </menu>
-            <menu label="IP ADDRESS">
+            <menu label="menu Device">
                 <menupopup>
-                    <menuitem label="Daftar Device" href="/zul/daftardevice.zul" target="ifrMenu"/>
+                    <menuitem label="lihat Device" href="/zul/daftardevice.zul" target="ifrMenu"/>
                 </menupopup>
             </menu>
             <menu label="Data dan Fakta">
@@ -23,6 +23,11 @@
                     <menuitem label="HUB"/>
                 </menupopup>
                 
+            </menu>
+            <menu label="Daftar Perangkat">
+                <menupopup>
+                    <menuitem label="Daftar Device" href="/zul/daftardevice.zul" target="ifrMenu"/>
+                </menupopup>
             </menu>
         </menubar>
         <iframe width="100%" height="100%" name="ifrMenu">
