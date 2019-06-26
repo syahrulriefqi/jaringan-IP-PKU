@@ -2,7 +2,7 @@
 
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtama"?>
 <zk xmlns="http://www.zkoss.org/2005/zul">       
-<window id="winUtama" title="IP addres" closable="true" apply="ctrl.daftardevice_" width="950px"
+<window id="winUtama" title="IP addres" closable="true" apply="ctrl.daftardevice_" width="100%"
 class="css">
 
 	<label id="lbdevice" width="250px"/>

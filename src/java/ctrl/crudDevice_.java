@@ -44,7 +44,7 @@ public class crudDevice_ extends GenericForwardComposer{
    @Override
     public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp); 
-       List lstJarDevice = em.createNamedQuery("JarDevice.findAll")
+        lstJarDevice = em.createNamedQuery("JarDevice.findAll")
                .setHint("eclipselink.refresh", "true")
                .getResultList();
 }
@@ -59,15 +59,16 @@ public class crudDevice_ extends GenericForwardComposer{
         tbJarDevice=(JarDevice) lstJarDevice.get(lstJarDevice.size()-1);
         
 }else{
-            lstJarDevice=em.createNamedQuery("JarDevice.findById")
+            
+//            Messagebox.show(session.getAttribute("sessID").toString());
+            
+            lstJarDevice=em.createNamedQuery("JarDevice.findByIdDevice")
                     .setHint("eclipselink.refresh", "true")
                     .setParameter("idDevice", Integer.parseInt(session.getAttribute("sessID").toString()))
                     .getResultList();
             tbJarDevice=(JarDevice) lstJarDevice.get(0);
-            txtNama.setValue(tbJarDevice.getNama());
+            txtNama.setValue(tbJarDevice.getNamaDevice());
        
-            //txtNama.setValue(tbJarDevice.getNama());
-            dtTgl.setValue(tbJarDevice.getTgl());
         }
      }
      public void onClick$btnSimpan() throws InterruptedException{
@@ -101,7 +102,7 @@ public class crudDevice_ extends GenericForwardComposer{
                     + "`tanggal` = '"+sdf.format(dtTgl.getValue())+"', "
                     //+ "`jam` = '"+sdfJam.format(tmJam.getValue())+"', "
                     + "`keterangan` = '"+txtKeterangan.getValue()+"' , "
-                    + "WHERE `id_device` = '"+session.getAttribute("sessID").toString()+"'; ";
+                    + "WHERE `id_device` = '"+session.getAttribute("sessID").toString()+"' ";
 }
 em.createNativeQuery(sql).executeUpdate();
                 em.flush();

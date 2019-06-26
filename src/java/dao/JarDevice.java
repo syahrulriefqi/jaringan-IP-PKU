@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "JarDevice.findAll", query = "SELECT j FROM JarDevice j"),
     @NamedQuery(name = "JarDevice.findByIdDevice", query = "SELECT j FROM JarDevice j WHERE j.idDevice = :idDevice"),
-    @NamedQuery(name = "JarDevice.findByNamaDevice", query = "SELECT j FROM JarDevice j WHERE j.namaDevice = :namaDevice"),
+    @NamedQuery(name = "JarDevice.findByNamaDevice", query = "SELECT j FROM JarDevice j WHERE j.namaDevice LIKE :namaDevice"),
     @NamedQuery(name = "JarDevice.findByMacAddres", query = "SELECT j FROM JarDevice j WHERE j.macAddres = :macAddres"),
     @NamedQuery(name = "JarDevice.findByIdUnit", query = "SELECT j FROM JarDevice j WHERE j.idUnit = :idUnit"),
     @NamedQuery(name = "JarDevice.findByUser", query = "SELECT j FROM JarDevice j WHERE j.user = :user"),

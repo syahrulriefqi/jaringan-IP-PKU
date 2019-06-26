@@ -5,6 +5,7 @@
  */
 package ctrl;
 
+import static ctrl.index_.em;
 import dao.JarDevice;
 import dao.VJarDevice;
 import java.sql.Connection;
@@ -48,15 +49,7 @@ public class daftardevice_ extends GenericForwardComposer{
     st = cn.createStatement();
     rsTotal=st.executeQuery("SELECT count(*) as jml FROM jar_device");
     rsTotal.next();
-    //Messagebox.show(rsTotal.getString("jml"));
-    //jumlah();
-//   
-//    lstJarDevice = em.createNamedQuery("JarDevice.findAll")
-//               .setHint("eclipselink.refresh", "true")
-//               .getResultList();
-//  // lstVJarDevice=em.createNamedQuery("VJarDevice.findAll")
-//   // .setHint("eclipselink.refresh", "true")
-//   // .getResultList();
+    
    String sql="select * from jar_device limit 10";
     lstJarDevice = em.createNativeQuery(sql, JarDevice.class)
                .setHint("eclipselink.refresh", "true")
@@ -64,15 +57,11 @@ public class daftardevice_ extends GenericForwardComposer{
 //        Messagebox.show(lstVJarDevice.size()+"");
 }
 
-//    private void jumlah() throws InterruptedException, SQLException{
-//    rsTotal=st.executeQuery("SELECT count(*) as jml FROM jar_device");
-//     rsTotal.next();
-//     lblJml.setValue(rsTotal.getString("jml")+"");
-//    }
+
     public void onSelect$lsbDaftar() throws InterruptedException{
-    lstJarDevice=em.createNamedQuery("JarDevice.findById")
+    lstJarDevice=em.createNamedQuery("JarDevice.findByIdDevice")
             .setHint("eclipselink.refresh", "true")
-            .setParameter("id", tbJarDevice.getId())
+            .setParameter("idDevice", tbJarDevice.getIdDevice())
             .getResultList();
     tbJarDevice=(JarDevice) lstJarDevice.get(0);
 }
@@ -83,6 +72,61 @@ public class daftardevice_ extends GenericForwardComposer{
     
     }
     
+    public void onClick$btnEdit() throws InterruptedException{
+        try {
+    session.setAttribute("sessNavi", "0");
+    session.setAttribute("sessID", tbJarDevice.getIdDevice());
+    execution.createComponents("/zul/crudDevice.zul", null,null);
+            
+        } catch (Throwable e) {
+            Messagebox.show("Data belum dipilih");
+        }
+    
+    }
+    public void onClick$btnRefresh() throws InterruptedException{
+    lstJarDevice= em.createNamedQuery("JarDevice.findAll")
+    .setHint("eclipselink.refresh", "true")
+    .getResultList();
+    //jumlah();
+}
+    
+    public void onClick$btnHapus() throws InterruptedException {
+    try{
+   
+        
+        if (!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        String sql="delete from jar_device where id_device='"+tbJarDevice.getIdDevice()+"'";
+        em.createNativeQuery(sql).executeUpdate();
+        em.flush();
+        em.getTransaction().commit();
+        
+        lstJarDevice = em.createNamedQuery("JarDevice.findAll")
+    .setHint("eclipselink.refresh", "true")
+    .getResultList();
+       // jumlah(); 
+    }catch(Throwable e) {
+        Messagebox.show(e.getMessage());
+          em.getTransaction().rollback();
+    }      
+}
+    public void onClick$btnTutup() throws InterruptedException {
+       winUtama.detach(); 
+    }
+public void onOK$txtNama() throws InterruptedException {
+   
+      String sql="select * from jar_device where nama_device like '"+txtNama.getValue()+"%'";
+   lstJarDevice=em.createNativeQuery(sql, JarDevice.class)
+           .setHint("exlipselink.refresh", "true")
+           .getResultList();
+            
+}
+public void onClick$btnSimpan() throws InterruptedException {
+    Messagebox.show("tersimpan");
+}
+
+
     public VJarDevice getTbVJarDevice() {
         return tbVJarDevice;
     }
@@ -114,6 +158,11 @@ public class daftardevice_ extends GenericForwardComposer{
     public void setTbJarDevice(JarDevice tbJarDevice) {
         this.tbJarDevice = tbJarDevice;
     }
+
+    private void jumlah() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }
     
