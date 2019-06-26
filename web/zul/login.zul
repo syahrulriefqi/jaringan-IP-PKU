@@ -34,6 +34,7 @@
                  </rows>
              </grid>
              <button mold="os" label="SUBMIT" id="btnLogin" width="150px"/>
+             <button mold="os" label="masok" id="btnMasok" width="150px"/>
          </vbox>
           
  </window>

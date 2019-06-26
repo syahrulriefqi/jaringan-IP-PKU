@@ -81,4 +81,15 @@ public class login_ extends GenericForwardComposer{
         }
         
     }
+    
+     public void onClick$btnMasok() throws InterruptedException{
+         
+    //           Messagebox.show("Selamat datang "+tbVLogin.getNama());
+                session.setAttribute("sessMenu", "1");                
+                
+//                Messagebox.show(session.getAttribute("sessNamaUser").toString());
+
+                execution.createComponents("/zul/index.zul", null, null);
+                winUtamaLogin.detach();
+    }
 }

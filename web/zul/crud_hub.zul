@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winCrudHub" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+ 
+        <window id="winCrudHub" title="Edit HUB" closable="true" apply="ctrl.crud_hub_"
+                width="500px" position="top"  mode="modal" >
+            <grid>
+                <columns>
+                    <column width="100px" align="right"/>
+                </columns>
+                <rows>
+                    <row>
+                        <label value="Nama Hub"/>
+                        <textbox id="txtNamaHub" width="300px" />
+                    </row>
+                    <row>
+                        <label value="Lokasi"/>
+                        <textbox id="txtLokasi" width="300px" />
+                    </row> 
+                    <row>
+                        <label value="Asal LAN"/>
+                        <textbox id="txtAsalLan" width="300px" />
+                    </row>
+                    <row>
+                        <label value="Keterangan"/>
+                        <textbox id="txtKeterangan" width="300px" />
+                    </row> 
+                    <row>
+                        <label value=""/>
+                        <button label="Simpan" id="btnSimpan" image="../img/save.png"/>
+                    </row>
+                </rows>
+            </grid>
+        </window>
+</zk>

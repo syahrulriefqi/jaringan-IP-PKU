@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winHub" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+ 
+        <window id="winHub" title="Daftar HUB" closable="true" apply="ctrl.daftar_hub_"
+                width="100%" position="top" border="true">
+            
+       <vbox>
+       <hbox>
+       <button label="Add" id="btnAdd" mold="os" image="/img/tambah.png"/>
+       <button label="Edit" id="btnEdit" mold="os" image="/img/edit.png"/>
+       <button label="Hapus" id="btnHapus" mold="os" image="/img/hapus.png"/>
+       <button label="Refresh" id="btnRefresh" mold="os" image="/img/refresh.png"/>
+       <button label="Tutup" id="btnTutup" mold="os" image="/img/tutup.png"/>
+       </hbox>
+       </vbox> 
+            <listbox id="lsbDaftar" model="@{winHub$composer.lstJarHub,load-after='winHub.onCreate,btnRefresh.onClick,btnHapus.onClick'}" 
+                     selectedItem="@{winHub$composer.tbJarHub}">
+           
+           <listhead> 
+               <listheader label="Nama Hub" width="100px"/>
+               <listheader label="Lokasi" width="100px"/>
+               <listheader label="Asal LAN" width="100px"/>
+               <listheader label="Keterangan" width="100px"/>
+             
+           </listhead>
+           <listitem forEach="@{winHub$composer.lstJarHub}" self="@{each='JarHub'}"
+           label="@{JarDevice}"> 
+               <listcell label="@{JarHub.namaHub}" />
+               <listcell label="@{JarHub.lokasi}" />
+               <listcell label="@{JarHub.asalLan}" />
+               <listcell label="@{JarHub.keterangan}" />
+          
+           </listitem>
+       </listbox>
+        </window>
+</zk>
