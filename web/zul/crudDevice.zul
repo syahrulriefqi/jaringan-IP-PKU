@@ -19,6 +19,18 @@ width="800px"  position="top" mode="modal">
                <label value="Mac Address"/>
                <textbox id="txtDevice" width="300px" value="@{winUtamaCrud$composer.tbJarDevice.macAddres,load-after='winUtamaCrud.onCreate'}"/>
            </row>
+           <row>
+                Unit
+                <combobox id="combo" buttonVisible="false" width="300px"
+                    autodrop="true"
+                        model="@{winUtamaCrud$composer.lstMrUnit,load-after='winUtamaCrud.onCreate'}"
+                        value="@{winUtamaCrud$composer.tbJarDevice.idUnit,converter='converter_.combobox_value',
+                        load-after='winUtamaCrud.onCreate'}">
+                            <comboitem forEach="@{winUtamaCrud$composer.lstMrUnit}" self="@{each='tbMrUnit'}"
+                            value="@{tbMrUnit.noUrut}" label="@{tbMrUnit.nama}"/>
+                        
+                </combobox> 
+            </row>
             <row>
                <label value="idUnit"/>
                <textbox id="txtUnit" width="300px"/>            

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtamaIP"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winIP"?>
 <zk xmlns="http://www.zkoss.org/2005/zul">       
-<window id="winUtamaIP" title="IP addres" closable="true" apply="ctrl.daftarIP_" width="100%"
+<window id="winIP" title="IP addres" closable="true" apply="ctrl.daftarIP_" width="100%"
 class="css">
 
 	<label id="lbdevice" width="250px"/>
@@ -28,31 +28,6 @@ class="css">
        </hbox>
        </vbox>
        
-     <listbox id="lsbDaftar" model="@{winUtamaIP$composer.lstJarIpAddres,load-after='winUtamaIP.onCreate,txtNama.onOK,btnRefresh.onClick,btnHapus.onClick'}" width="100%"
-       selectedItem="@{winUtamaIP$composer.tbJarIpAddres}">
-           
-           <listhead>
-               <listheader label="ip_Address" width="50px"/>
-               <listheader label="tanggal" width="100px"/>
-               <listheader label="posisi" width="100px"/>
-               <listheader label="keterangan" width="100px"/>
-               <listheader label="id_device" width="100px"/>
-               <listheader label="id_hub" width="100px"/>
-               <listheader label="status" width="50px"/>
-             
-           </listhead>
-           <listitem forEach="@{winUtamaIP$composer.lstJarIpAddres}" self="@{each='JarIpAddres'}"
-           label="@{JarIpAddres}">
-               <listcell label="@{JarIpAddres.ipAddress}" />
-              <listcell label="@{JarIpAddres.tanggal,converter='converter_.tanggal_string'}"/>
-               <listcell label="@{JarIpAddres.posisi}"/>
-               <listcell label="@{JarIpAddres.keterangan}"/>
-               <listcell label="@{JarIpAddres.idDevice}"/>
-               <listcell label="@{JarIpAddres.idHub}"/>
-               <listcell label="@{JarIpAddres.status}"/>
-          
-           </listitem>
-       </listbox>
-           
+     
 </window>
 </zk>

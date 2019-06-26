@@ -86,6 +86,7 @@ public class daftar_hub_ extends GenericForwardComposer{
             .setHint("eclipselink.refresh", "true")
             .getResultList();
     } 
+    
     public void onClick$btnHapus() throws InterruptedException{
         try {
             

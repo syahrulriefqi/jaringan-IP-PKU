@@ -5,6 +5,7 @@
  */
 package ctrl;
 
+import static ctrl.daftar_hub_.em;
 import dao.JarHub;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -85,6 +86,7 @@ public class crud_hub_  extends GenericForwardComposer{
             winCrudHub.detach();
             Messagebox.show("Simpan Sukses","Informasi", Messagebox.OK,Messagebox.INFORMATION);
             
+            
         } catch (Throwable e) {
             Messagebox.show(e.getMessage());
             em.getTransaction().rollback();
@@ -107,6 +109,7 @@ public class crud_hub_  extends GenericForwardComposer{
     public void setTbJarHub(JarHub tbJarHub) {
         this.tbJarHub = tbJarHub;
     }
+
     
     
 }

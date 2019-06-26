@@ -7,6 +7,7 @@ package ctrl;
 
 import dao.JarDevice;
 import dao.JarIpAddres;
+import dao.MrUnit;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -16,7 +17,9 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.WrongValueException;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
+import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Datebox;
+import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Radiogroup;
 import org.zkoss.zul.Textbox;
@@ -31,12 +34,14 @@ public class crudDevice_ extends GenericForwardComposer{
    static EntityManagerFactory emf=Persistence.createEntityManagerFactory("jar_pkuPU");
     static EntityManager em=emf.createEntityManager();
     
-    protected List   lstJarDevice;
+    protected List   lstJarDevice,lstMrUnit;
     private JarDevice  tbJarDevice;
+    private MrUnit      tbMrUnit;
     private Textbox  txtNama, txtDevice, txtUnit, txtKeterangan, txtUser, txtLokasi, txtPassword;
     private Button   btnSimpan;
     private Window   winUtamaCrud;
     private Datebox  dtTgl;
+    private Combobox    combo;
     //private Timebox tmJam;
    final SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
    //final SimpleDateFormat sdfJam=new SimpleDateFormat("hh:mm:ss");
@@ -45,6 +50,11 @@ public class crudDevice_ extends GenericForwardComposer{
     public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp); 
         lstJarDevice = em.createNamedQuery("JarDevice.findAll")
+               .setHint("eclipselink.refresh", "true")
+               .getResultList();
+        
+        
+        lstMrUnit = em.createNamedQuery("MrUnit.findAll")
                .setHint("eclipselink.refresh", "true")
                .getResultList();
 }
@@ -119,6 +129,7 @@ em.createNativeQuery(sql).executeUpdate();
         
         }
 
+        
     public List getLstJarDevice() {
         return lstJarDevice;
     }
@@ -133,5 +144,21 @@ em.createNativeQuery(sql).executeUpdate();
 
     public void setTbJarDevice(JarDevice tbJarDevice) {
         this.tbJarDevice = tbJarDevice;
+    }
+
+    public List getLstMrUnit() {
+        return lstMrUnit;
+    }
+
+    public void setLstMrUnit(List lstMrUnit) {
+        this.lstMrUnit = lstMrUnit;
+    }
+
+    public MrUnit getTbMrUnit() {
+        return tbMrUnit;
+    }
+
+    public void setTbMrUnit(MrUnit tbMrUnit) {
+        this.tbMrUnit = tbMrUnit;
     }
 }

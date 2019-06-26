@@ -19,7 +19,7 @@
             </menu>
             <menu label="Data dan Fakta">
                 <menupopup>
-                    <menuitem label="IP Adress"/>
+                    <menuitem label="IP Adress" href="/zul/daftarIP.zul" target="ifrMenu"/>
                     <menuitem label="HUB" href="/zul/daftar_hub.zul" target="ifrMenu"/>
                 </menupopup>
                 
