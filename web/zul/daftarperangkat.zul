@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtamaPerangkat"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">       
+<window id="winUtamaPerangkat" title="daftar seluruh device" closable="true" apply="ctrl.perangkat_" width="100%"
+class="css">
+
+	<label id="lbdevice" width="250px"/>
+       <grid>
+           <columns>
+               <column width="100px" align="right"/>
+           </columns>
+           <rows>
+               <row>
+                   <label value="Device : "/>
+                   <textbox id="txtNama" width="200px"/> 
+                    
+                   </row>
+            </rows>
+       </grid>
+       
+     <listbox id="lsbDaftar" model="@{winUtamaPerangkat$composer.lstVJarDevice,load-after='winUtamaPerangkat.onCreate,txtNama.onOK'}" width="100%"
+       selectedItem="@{winUtamaPerangkat$composer.tbVJarDevice}">
+           
+           <listhead>
+               <listheader label="id_device" width="50px"/>
+               <listheader label="nama_device" width="100px"/>
+               <listheader label="mac_addres" width="100px"/>
+               <listheader label="tanggal" width="100px"/>
+               <listheader label="jam" width="50px"/>
+               <listheader label="ip_addres" width="100px"/>
+               <listheader label="keterangan" width="100px"/>
+               <listheader label="namaUnit" width="100px"/>         
+               <listheader label="namaHub" width="100px"/>
+             
+           </listhead>
+           <listitem forEach="@{winUtamaPerangkat$composer.lstVJarDevice}" self="@{each='VJarDevice'}"
+           label="@{VJarDevice}">
+               <listcell label="@{VJarDevice.idDevice}" />
+               <listcell label="@{VJarDevice.namaDevice}"/>
+               <listcell label="@{VJarDevice.macAddres}"/>
+                <listcell label="@{VJarDevice.tanggal,converter='converter_.tanggal_string'}"/>
+                <listcell label="@{VJarDevice.jam}"/>
+               <listcell label="@{VJarDevice.ipAddress}"/>
+               <listcell label="@{VJarDevice.keterangan}"/>
+               <listcell label="@{VJarDevice.namaUnit}"/>
+               <listcell label="@{VJarDevice.namaHub}"/>
+          
+           </listitem>
+       </listbox>
+           
+</window>
+</zk>

@@ -39,18 +39,9 @@ public class daftar_hub_ extends GenericForwardComposer{
    public void onCreate$winHub() throws InterruptedException, SQLException{
     koneksi_ k = new koneksi_();
     cn = k.getConnection();
-    st = cn.createStatement();
-    rsTotal=st.executeQuery("SELECT count(*) as jml FROM jar_device");
-    rsTotal.next();
+    st = cn.createStatement(); 
     //Messagebox.show(rsTotal.getString("jml"));
-    //jumlah();
-//   
-//    lstJarDevice = em.createNamedQuery("JarDevice.findAll")
-//               .setHint("eclipselink.refresh", "true")
-//               .getResultList();
-//  // lstVJarDevice=em.createNamedQuery("VJarDevice.findAll")
-//   // .setHint("eclipselink.refresh", "true")
-//   // .getResultList();
+
    String sql="select * from jar_hub limit 10";
     lstJarHub = em.createNativeQuery(sql, JarHub.class)
                .setHint("eclipselink.refresh", "true")

@@ -116,7 +116,7 @@ public class crudDevice_ extends GenericForwardComposer {
                     "`lokasi` = '" + txtLokasi.getValue() + "' , " +
                     "`tanggal` = '" + getTanggal() + "', "+ 
                     "`jam` = '"+getWaktu()+"', "+
-                    "`keterangan` = '" + txtKeterangan.getValue() + "' , " +
+                    "`keterangan` = '" + txtKeterangan.getValue() + "'  " +
                     "WHERE `id_device` = '" + session.getAttribute("sessID").toString() + "' ";
             }
             em.createNativeQuery(sql).executeUpdate();

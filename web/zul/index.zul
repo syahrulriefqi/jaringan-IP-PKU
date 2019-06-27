@@ -2,7 +2,7 @@
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtama" ?>
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <style src="/css/mycss.css"/>
-    
+
     <window id="winUtama" title="DAFTAR ALAMAT IP dan JARINGAN" closable="false" apply="ctrl.index_" border="true"
     width="100%" height="100%" >
         <menubar>
@@ -26,12 +26,11 @@
             </menu>
             <menu label="Daftar Perangkat">
                 <menupopup>
-                    <menuitem label="Daftar Device" href="/zul/daftardevice.zul" target="ifrMenu"/>
+                    <menuitem label="Daftar Device" href="/zul/daftarperangkat.zul" target="ifrMenu"/>
                 </menupopup>
             </menu>
         </menubar>
-        
-        <iframe width="100%" height="100%" name="ifrMenu" style="background: url('img/baymax.jpg') no-repeat;background-position:center;"/>
+        <iframe width="100%" height="100%" name="ifrMenu" style="background: url('img/1.jpg') no-repeat;background-position:center;"/>
         
     </window>
 </zk>

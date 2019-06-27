@@ -27,6 +27,33 @@ class="css">
        <button label="Tutup" id="btnTutup" mold="os" image="/img/tutup.png"/>
        </hbox>
        </vbox>
+       <listbox id="lsbDaftar" model="@{winIP$composer.lstJarIpAddres,load-after='winIP.onCreate,btnRefresh.onClick,btnHapus.onClick'}" 
+                     selectedItem="@{winIP$composer.tbJarIpAddres}">
+           <listhead> 
+               <listheader label="Id Ip Addres" width="100px"/>
+               <listheader label="Ip addres" width="100px"/>
+               <listheader label="Tanggal" width="100px"/>
+               <listheader label="Jam" width="100px"/>
+               <listheader label="posisi" width="100px"/>
+               <listheader label="Keterangan" width="100px"/>
+               <listheader label="id Hub" width="100px"/>
+               <listheader label="id device" width="100px"/>
+               <listheader label="status" width="100px"/>
+                          
+           </listhead>
+            <listitem forEach="@{winHub$composer.lstJarIpAddres}" self="@{each='JarIpAddres'}"
+           label="@{JarDevice}"> 
+               <listcell label="@{JarIpAddres.IdIpAddress}" />
+               <listcell label="@{JarIpAddres.IpAddress}" />
+               <listcell label="@{JarIpAddres.Tanggal}" />
+               <listcell label="@{JarIpAddres.Jam}" />
+               <listcell label="@{JarIpAddres.Posisi}" />
+               <listcell label="@{JarIpAddres.Keterangan}" />
+               <listcell label="@{JarIpAddres.IdHub}" />
+               <listcell label="@{JarIpAddres.IdDevice}" />
+              <listcell label="@{JarIpAddres.Status}" />
+           </listitem>
+       </listbox>
        
      
 </window>
