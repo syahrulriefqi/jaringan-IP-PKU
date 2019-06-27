@@ -26,7 +26,7 @@
             </menu>
             <menu label="Daftar Perangkat">
                 <menupopup>
-                    <menuitem label="Daftar Devic" href="/zul/daftarperangkat.zul" target="ifrMenu"/>
+                    <menuitem label="Daftar Device" href="/zul/daftarperangkat.zul" target="ifrMenu"/>
                 </menupopup>
             </menu>
         </menubar>
