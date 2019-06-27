@@ -8,7 +8,9 @@ package ctrl;
 import dao.JarDevice;
 import dao.JarIpAddres;
 import dao.MrUnit;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -57,6 +59,8 @@ public class crudDevice_ extends GenericForwardComposer {
         lstMrUnit = em.createNamedQuery("MrUnit.findAll")
             .setHint("eclipselink.refresh", "true")
             .getResultList();
+        
+//        tgl.getTanggal());
     }
     public void onCreate$winUtamaCrud() throws InterruptedException {
         if ("1".equals(session.getAttribute("sessNavi").toString())) {
@@ -131,7 +135,12 @@ public class crudDevice_ extends GenericForwardComposer {
 
     }
 
-
+ private String getTanggal() {  
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");  
+        Date date = new Date();  
+        return dateFormat.format(date);  
+    }  
+ 
     public List getLstJarDevice() {
         return lstJarDevice;
     }
