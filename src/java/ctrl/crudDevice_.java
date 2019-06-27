@@ -59,10 +59,11 @@ public class crudDevice_ extends GenericForwardComposer {
         lstMrUnit = em.createNamedQuery("MrUnit.findAll")
             .setHint("eclipselink.refresh", "true")
             .getResultList();
-        
-//        tgl.getTanggal());
+         
+            Messagebox.show(""+getTanggal(), "Informasi", Messagebox.OK, Messagebox.INFORMATION);
     }
     public void onCreate$winUtamaCrud() throws InterruptedException {
+        
         if ("1".equals(session.getAttribute("sessNavi").toString())) {
             lstJarDevice = em.createNamedQuery("JarDevice.findAll")
                 .setHint("eclipselink.refresh", "true")
@@ -93,7 +94,7 @@ public class crudDevice_ extends GenericForwardComposer {
 
             String sql = null;
             if (session.getAttribute("sessNavi").toString() == "1") {
-                sql = "insert into jar_device (nama_device,mac_addres,id_unit,user,password,lokasi,tanggal,keterangan)" +
+                sql = "insert into jar_device (nama_device,mac_addres,id_unit,user,password,lokasi,tanggal,jam,keterangan)" +
                     " values ('" +
                     txtNama.getValue() + "','" +
                     txtDevice.getValue() + "','" +
@@ -101,22 +102,20 @@ public class crudDevice_ extends GenericForwardComposer {
                     txtUser.getValue() + "','" +
                     txtPassword.getValue() + "','" +
                     txtLokasi.getValue() + "','" +
-                    sdf.format(dtTgl.getValue()) + "','"
-                    // +sdf.format(tmJam.getValue())+"','"
-                    +
+                    getTanggal() + "','"+
+                    getWaktu()+"','"+
                     txtKeterangan.getValue() + "')";
 
             } else {
                 sql = "UPDATE jar_device SET " +
                     "`nama_device` = '" + txtNama.getValue() + "' , " +
                     "`mac_addres` = '" + txtDevice.getValue() + "' , " +
-                    "`id_unit` = '" + txtUnit.getValue() + "' , " +
+                    "`id_unit` = '" + tbJarDevice.getIdUnit() + "' , " +
                     "`user` = '" + txtUser.getValue() + "' , " +
                     "`password` = '" + txtPassword.getValue() + "' , " +
                     "`lokasi` = '" + txtLokasi.getValue() + "' , " +
-                    "`tanggal` = '" + sdf.format(dtTgl.getValue()) + "', "
-                    //+ "`jam` = '"+sdfJam.format(tmJam.getValue())+"', "
-                    +
+                    "`tanggal` = '" + getTanggal() + "', "+ 
+                    "`jam` = '"+getWaktu()+"', "+
                     "`keterangan` = '" + txtKeterangan.getValue() + "' , " +
                     "WHERE `id_device` = '" + session.getAttribute("sessID").toString() + "' ";
             }
@@ -136,10 +135,17 @@ public class crudDevice_ extends GenericForwardComposer {
     }
 
  private String getTanggal() {  
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");  
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
+        Date date = new Date();
+        String strDate = dateFormat.format(date);  
+                        
+        return strDate;  
+    }  
+ private String getWaktu() {  
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");  
         Date date = new Date();  
         return dateFormat.format(date);  
-    }  
+    }
  
     public List getLstJarDevice() {
         return lstJarDevice;
