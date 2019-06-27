@@ -21,7 +21,7 @@ width="800px"  position="top" mode="modal">
            </row>
            <row>
                 Unit
-                <combobox id="combo" buttonVisible="false" width="300px"
+                <combobox id="txtUnit" buttonVisible="false" width="300px"
                     autodrop="true"
                         model="@{winUtamaCrud$composer.lstMrUnit,load-after='winUtamaCrud.onCreate'}"
                         value="@{winUtamaCrud$composer.tbJarDevice.idUnit,converter='converter_.combobox_value',
@@ -30,11 +30,7 @@ width="800px"  position="top" mode="modal">
                             value="@{tbMrUnit.noUrut}" label="@{tbMrUnit.nama}"/>
                         
                 </combobox> 
-            </row>
-            <row>
-               <label value="idUnit"/>
-               <textbox id="txtUnit" width="300px"/>            
-           </row>
+            </row> 
             <row>
                <label value="user"/>
                <textbox id="txtUser" width="300px"/>            

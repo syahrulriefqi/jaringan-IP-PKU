@@ -30,9 +30,8 @@
                 </menupopup>
             </menu>
         </menubar>
-        <iframe width="100%" height="100%" name="ifrMenu">
-          
-        </iframe>
+        
+        <iframe width="100%" height="100%" name="ifrMenu" style="background: url('img/baymax.jpg') no-repeat;background-position:center;"/>
         
     </window>
 </zk>
