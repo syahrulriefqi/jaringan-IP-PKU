@@ -49,8 +49,8 @@ class="css">
                <listcell label="@{JarIpAddres.Jam}" />
                <listcell label="@{JarIpAddres.Posisi}" />
                <listcell label="@{JarIpAddres.Keterangan}" />
-               <listcell label="@{JarIpAddres.IdHub}" />
-               <listcell label="@{JarIpAddres.IdDevice}" />
+               <listcell label="@{JarHub.IdHub}" />
+               <listcell label="@{JarDevice.IdDevice}" />
               <listcell label="@{JarIpAddres.Status}" />
            </listitem>
        </listbox>

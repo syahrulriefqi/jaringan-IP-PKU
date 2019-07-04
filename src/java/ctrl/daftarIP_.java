@@ -16,6 +16,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import org.zkoss.zhtml.Messagebox;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Window;
 
@@ -31,8 +32,8 @@ public class daftarIP_ extends GenericForwardComposer{
     private ResultSet     rsTotal;
     private Connection    cn;
     private Statement     st;
-   protected List   lstJarIpAddres;
-    private JarIpAddres tbJarIpAddres;       
+   protected List   lstJarIpAddres, lstJarDevice, lstJarHub;
+    private JarIpAddres tbJarIpAddres, tbJarDevice, tbJarHub;       
     
     public void onCreate$winIP() throws InterruptedException, SQLException{
     koneksi_ k = new koneksi_();
@@ -53,6 +54,25 @@ public class daftarIP_ extends GenericForwardComposer{
                 .getResultList();
         tbJarIpAddres=(JarIpAddres) lstJarIpAddres.get(0);
     }   
+     public void onClick$btnAdd() throws InterruptedException{
+    session.setAttribute("sessNavi", "1");
+    execution.createComponents("/zul/crudIP.zul",null,null);
+    
+    }
+     public void onClick$btnEdit() throws InterruptedException{
+        try {
+            session.setAttribute("sessNavi", "0");
+            session.setAttribute("sessId", tbJarIpAddres.getIdIpAddress());
+            
+//            Messagebox.show((String) session.getAttribute("sessId"));
+            execution.createComponents("/zul/crudIP.zul",null,null);
+        } catch (Throwable e) {
+            Messagebox.show("Data belum dipilih");
+//            em.getTransaction().rollback();
+        }
+   
+     
+}
 
     public List getLstJarIpAddres() {
         return lstJarIpAddres;
@@ -62,6 +82,22 @@ public class daftarIP_ extends GenericForwardComposer{
         this.lstJarIpAddres = lstJarIpAddres;
     }
 
+    public List getLstJarDevice() {
+        return lstJarDevice;
+    }
+
+    public void setLstJarDevice(List lstJarDevice) {
+        this.lstJarDevice = lstJarDevice;
+    }
+
+    public List getLstJarHub() {
+        return lstJarHub;
+    }
+
+    public void setLstJarHub(List lstJarHub) {
+        this.lstJarHub = lstJarHub;
+    }
+
     public JarIpAddres getTbJarIpAddres() {
         return tbJarIpAddres;
     }
@@ -69,5 +105,20 @@ public class daftarIP_ extends GenericForwardComposer{
     public void setTbJarIpAddres(JarIpAddres tbJarIpAddres) {
         this.tbJarIpAddres = tbJarIpAddres;
     }
-     
+
+    public JarIpAddres getTbJarDevice() {
+        return tbJarDevice;
+    }
+
+    public void setTbJarDevice(JarIpAddres tbJarDevice) {
+        this.tbJarDevice = tbJarDevice;
+    }
+
+    public JarIpAddres getTbJarHub() {
+        return tbJarHub;
+    }
+
+    public void setTbJarHub(JarIpAddres tbJarHub) {
+        this.tbJarHub = tbJarHub;
+    }
 }

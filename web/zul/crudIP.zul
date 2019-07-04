@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="winUtamaIP" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div align="center">
+<window id="winUtamaIP" title="Edit IP" closable="true" apply="ctrl.crudIP_"
+width="800px"  position="top" mode="modal">
+
+    <grid>
+   <columns>
+       <column width="100px" align="right"/>
+       </columns>
+       <rows>
+           <row>
+               <label value="Id  Ip Addres"/>
+               <textbox id="txtId" width="300px"/>
+             
+           </row>
+           <row>
+               <label value="Ip Address"/>
+               <textbox id="txtNama" width="300px" value="@{winUtamaIP$composer.tbJarIpAddres,load-after='winUtamaIP.onCreate'}"/>
+           </row>
+            <row>
+               <label value="user"/>
+               <textbox id="txtUser" width="300px"/>            
+           </row>
+           <row>
+               <label value="tanggal"/>
+               <datebox id="dtTgl" width="300px" format="dd-MM-yyyy"/>
+            
+           </row>
+           <row>
+               <label value="posisi"/>
+               <textbox id="txtPosisi" width="300px"/>            
+           </row>
+           <row>
+              <label value="keterangan"/>
+               <textbox id="txtKeterangan" width="300px"/>
+           </row>
+      
+           <row>
+               <label value="Id Hub"/>
+               <textbox id="txtIdHub" width="300px"/>            
+           </row>
+            <row>
+               <label value="Id Device"/>
+               <textbox id="txtIdDevice" width="300px"/>            
+           </row>
+            <row>
+               <label value="status"/>
+               <textbox id="txtStatus" width="300px"/>            
+           </row>
+           
+            </rows> 
+</grid>
+<button label="Simpan" id="btnSimpan"/>
+</window>
+    </div>
+</zk>
