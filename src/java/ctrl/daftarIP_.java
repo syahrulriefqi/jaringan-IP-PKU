@@ -59,6 +59,11 @@ public class daftarIP_ extends GenericForwardComposer{
     execution.createComponents("/zul/crudIP.zul",null,null);
     
     }
+        public void onClick$btnRefresh()throws InterruptedException, SQLException{
+        lstJarIpAddres = em.createNamedQuery("JarIpAddres.findAll")
+            .setHint("eclipselink.refresh", "true")
+            .getResultList();
+    } 
      public void onClick$btnEdit() throws InterruptedException{
         try {
             session.setAttribute("sessNavi", "0");
