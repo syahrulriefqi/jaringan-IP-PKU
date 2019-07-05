@@ -17,7 +17,7 @@ width="800px"  position="top" mode="modal">
            </row>
            <row>
                <label value="Ip Address"/>
-               <textbox id="txtNama" width="300px" value="@{winUtamaIP$composer.tbJarIpAddres,load-after='winUtamaIP.onCreate'}"/>
+               <textbox id="txtNama" width="300px" />
            </row>
             <row>
                <label value="user"/>

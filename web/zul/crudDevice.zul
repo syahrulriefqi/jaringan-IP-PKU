@@ -43,7 +43,7 @@ width="800px"  position="top" mode="modal">
                <label value="lokasi"/>
                <textbox id="txtLokasi" width="300px"/>            
            </row>
-           <row>
+           <row visible="none">
                <label value="tanggal"/>
                <datebox id="dtTgl" width="300px" format="dd-MM-yyyy"/>
            </row>
