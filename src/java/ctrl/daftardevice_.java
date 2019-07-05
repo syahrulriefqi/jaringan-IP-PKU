@@ -50,7 +50,7 @@ public class daftardevice_ extends GenericForwardComposer{
     rsTotal=st.executeQuery("SELECT count(*) as jml FROM jar_device");
     rsTotal.next();
     
-   String sql="select * from jar_device limit 10";
+   String sql="select * from jar_device";
     lstJarDevice = em.createNativeQuery(sql, JarDevice.class)
                .setHint("eclipselink.refresh", "true")
                .getResultList();

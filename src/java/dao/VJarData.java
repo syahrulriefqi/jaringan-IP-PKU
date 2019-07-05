@@ -21,23 +21,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author esyeha
+ * @author san
  */
 @Entity
-@Table(name = "v_jar_device")
+@Table(name = "v_jar_data")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "VJarDevice.findAll", query = "SELECT v FROM VJarDevice v"),
-    @NamedQuery(name = "VJarDevice.findByIdDevice", query = "SELECT v FROM VJarDevice v WHERE v.idDevice = :idDevice"),
-    @NamedQuery(name = "VJarDevice.findByNamaDevice", query = "SELECT v FROM VJarDevice v WHERE v.namaDevice = :namaDevice"),
-    @NamedQuery(name = "VJarDevice.findByMacAddres", query = "SELECT v FROM VJarDevice v WHERE v.macAddres = :macAddres"),
-    @NamedQuery(name = "VJarDevice.findByTanggal", query = "SELECT v FROM VJarDevice v WHERE v.tanggal = :tanggal"),
-    @NamedQuery(name = "VJarDevice.findByJam", query = "SELECT v FROM VJarDevice v WHERE v.jam = :jam"),
-    @NamedQuery(name = "VJarDevice.findByIpAddress", query = "SELECT v FROM VJarDevice v WHERE v.ipAddress = :ipAddress"),
-    @NamedQuery(name = "VJarDevice.findByNamaUnit", query = "SELECT v FROM VJarDevice v WHERE v.namaUnit = :namaUnit"),
-    @NamedQuery(name = "VJarDevice.findByNamaHub", query = "SELECT v FROM VJarDevice v WHERE v.namaHub = :namaHub")})
-
-public class VJarDevice implements Serializable {
+    @NamedQuery(name = "VJarData.findAll", query = "SELECT v FROM VJarData v"),
+    @NamedQuery(name = "VJarData.findByIdDevice", query = "SELECT v FROM VJarData v WHERE v.idDevice = :idDevice"),
+    @NamedQuery(name = "VJarData.findByNamaDevice", query = "SELECT v FROM VJarData v WHERE v.namaDevice = :namaDevice"),
+    @NamedQuery(name = "VJarData.findByMacAddres", query = "SELECT v FROM VJarData v WHERE v.macAddres = :macAddres"),
+    @NamedQuery(name = "VJarData.findByTanggal", query = "SELECT v FROM VJarData v WHERE v.tanggal = :tanggal"),
+    @NamedQuery(name = "VJarData.findByJam", query = "SELECT v FROM VJarData v WHERE v.jam = :jam"),
+    @NamedQuery(name = "VJarData.findByIpAddress", query = "SELECT v FROM VJarData v WHERE v.ipAddress = :ipAddress"),
+    @NamedQuery(name = "VJarData.findByNamaUnit", query = "SELECT v FROM VJarData v WHERE v.namaUnit = :namaUnit"),
+    @NamedQuery(name = "VJarData.findByNamaHub", query = "SELECT v FROM VJarData v WHERE v.namaHub = :namaHub")})
+public class VJarData implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Basic(optional = false)
@@ -63,7 +62,7 @@ public class VJarDevice implements Serializable {
     @Column(name = "nama_hub")
     private String namaHub;
 
-    public VJarDevice() {
+    public VJarData() {
     }
 
     public int getIdDevice() {
@@ -136,10 +135,6 @@ public class VJarDevice implements Serializable {
 
     public void setNamaHub(String namaHub) {
         this.namaHub = namaHub;
-    }
-
-    public Object getId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
